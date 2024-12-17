@@ -1,6 +1,3 @@
-const [numbersMap, ocurrencesMap] = readProblemData ('./input');
-console.log(calcResult(numbersMap, ocurrencesMap));
-
 function readProblemData(filePath: string): [Map<number, number>, Map<number, number>] {
   const content = Deno.readTextFileSync(filePath);
   const lines = content.trim().split('\n');
@@ -26,3 +23,6 @@ function calcResult (numbersMap: Map<number, number>, ocurrencesMap: Map<number,
   })
   return result;
 }
+
+const [numbersMap, ocurrencesMap] = readProblemData ('./input');
+console.log(calcResult(numbersMap, ocurrencesMap));
