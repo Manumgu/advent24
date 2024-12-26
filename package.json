@@ -1,0 +1,30 @@
+{
+  "name": "advent24",
+  "version": "1.0.0",
+  "description": "advent of code 2024",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manumgu/advent24.git"
+  },
+  "keywords": [
+    "advent",
+    "code",
+    "ts"
+  ],
+  "author": "manuel moreno guillamon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Manumgu/advent24/issues"
+  },
+  "homepage": "https://github.com/Manumgu/advent24#readme",
+  "dependencies": {
+    "vitest": "^2.1.8"
+  },
+  "devDependencies": {
+    "@deno/shim-deno": "^0.19.2"
+  }
+}
