@@ -1,3 +1,10 @@
+import { Deno } from '@deno/shim-deno';
+
+export function calculateResultFromFile(filePath: string): number {
+  const [numbersMap, occurrencesMap] = readProblemData(filePath);
+  return calcResult(numbersMap, occurrencesMap);
+}
+
 function readProblemData(filePath: string): [Map<number, number>, Map<number, number>] {
   const content = Deno.readTextFileSync(filePath);
   const lines = content.trim().split('\n');
@@ -15,14 +22,15 @@ function readProblemData(filePath: string): [Map<number, number>, Map<number, nu
   return [numbersMap, occurrencesMap];
 }
 
-
-function calcResult (numbersMap: Map<number, number>, ocurrencesMap: Map<number, number>): number {
+function calcResult(numbersMap: Map<number, number>, occurrencesMap: Map<number, number>): number {
   let result = 0;
   numbersMap.forEach((value, key) => {
-    result += key * (ocurrencesMap.get(key) || 0) * value;
+    result += key * (occurrencesMap.get(key) || 0) * value;
   })
   return result;
 }
 
-const [numbersMap, ocurrencesMap] = readProblemData ('./input');
-console.log(calcResult(numbersMap, ocurrencesMap));
+// Only run if this is the main module
+if (import.meta.main) {
+  console.log(calculateResultFromFile('./input'));
+}
